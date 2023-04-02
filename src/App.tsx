@@ -21,27 +21,21 @@ const App = () => {
         setSubmitedValue(prev => "")
         setHidden(prev => false)
       }, 1000)
-    }, 3000)
+    }, 2500)
 
   }, [submitedValue, subtitles])
-
-  useEffect(() => {
-
-    if(subtitles.split(" ").length === 10) buttonRef.current?.click() 
-
-  }, [subtitles])
 
   return (
     <>
       <form onSubmit={submitHandler}>
-        <input type="text" id="msg" onChange={(e) => setSubtitles(e.target.value)} value={subtitles} />
+        <input type="text" id="msg" autoComplete="off" onChange={(e) => setSubtitles(e.target.value)} value={subtitles} />
         <button type="submit" ref={buttonRef} disabled={submitedValue !== ''}>Enter</button>
       </form>
       <main className="app">
         {submitedValue && (
-          <h2 className={`sub-enter ${hidden && 'hidden'}`}>{submitedValue}</h2>
+          <p className={`sub-enter ${hidden && 'hidden'}`}>{submitedValue}</p>
         )}
-        <h2>{subtitles}</h2>
+        <p className={`${!subtitles && 'no-words'}`}>{subtitles}</p>
       </main>
     </>
   )
