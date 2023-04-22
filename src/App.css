@@ -2,12 +2,9 @@
   width: 80vw;
   height: 95vh;
   display: flex;
-  align-items: center;
   justify-content: end;
-  margin: auto;
   overflow-wrap: break-word;
   flex-direction: column;
-  padding-bottom: 40px;
 }
 
 .app p:not(.no-words) {
@@ -18,21 +15,33 @@
   color: black;
   text-align: left;
   border-radius: 5px;
-  max-width: 60%; 
+  width: max-content;
+  max-width: 40%; 
+  position: relative;
+  z-index: 999;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 1.3rem;
 }
 
 .app p.no-words {
   padding: 5px 20px;
+  width: max-content;
   background-color: white;
   border-radius: 5px;
+  position: relative;
+  z-index: 999;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  display: inline-block;
 }
 
 .app p.sub-enter {
   margin-bottom: 0;
-  opacity: 1;
-  transition: opacity 1s ease-out;
+  transition: transform .6s ease-in-out;
 }
 
 .app p.sub-enter.hidden {
-  opacity: 0;
+  transform: translateX(-300%);
 }

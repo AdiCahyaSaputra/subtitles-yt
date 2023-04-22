@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import './App.css'
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
       setTimeout(() => {
         setSubmitedValue(prev => "")
         setHidden(prev => false)
-      }, 1000)
+      }, 700)
     }, 2500)
 
   }, [submitedValue, subtitles])
